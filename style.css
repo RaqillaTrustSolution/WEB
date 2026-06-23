@@ -474,22 +474,30 @@ footer {
   font-style: italic;
 }
 .harga-wa { width: 100%; text-align: center; }
-.harga-img { display: flex; justify-content: center; }
+.harga-img { display: flex; justify-content: center; align-items: flex-start; overflow: hidden; }
+/* 🖼️ UKURAN BROSUR — edit max-width di sini */
 .brosur-img {
   width: 100%;
-  max-width: 380px;
+  max-width: 280px;        /* brosur section Harga */
+  height: auto;
+  object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
   border: 1px solid rgba(255,255,255,0.08);
 }
-.brosur-wide { max-width: 100%; }
+.brosur-wide {
+  max-width: 100%;         /* brosur section Download App */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 /* ===== DOWNLOAD APP ===== */
 .app-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
 }
 .app-desc {
   color: var(--text-muted);
@@ -520,7 +528,13 @@ footer {
 .app-btn-icon { font-size: 28px; }
 .app-btn small { display: block; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
 .app-btn strong { display: block; font-size: 16px; font-weight: 700; }
-.app-visual { display: flex; justify-content: center; }
+.app-visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  max-width: 100%;
+}
 
 @media (max-width: 900px) {
   .harga-box { grid-template-columns: 1fr; }
